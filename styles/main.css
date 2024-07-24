@@ -1,0 +1,11 @@
+.place-content-center {
+  place-content: center;
+}
+
+.bi {
+  pointer-events: none;
+}
+
+.contact-card {
+  flex: 1 0 25%;
+}
