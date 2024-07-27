@@ -15,8 +15,8 @@ export const authTemplate = `
             <input
               type="text"
               class="form-control"
-              id="username"
-              name="username"
+              id="userName"
+              name="userName"
               required
             />
           </div>

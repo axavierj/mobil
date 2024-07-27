@@ -10,6 +10,4 @@ self.addEventListener("activate", (event) => {
 })
 
 //handel the fetch event
-self.addEventListener("fetch", (event) => {
-  console.log("Fetching:", event.request.url)
-})
+self.addEventListener("fetch", (event) => {})

@@ -1,17 +1,28 @@
 import { apiUrl } from "../utils/apiUrl.js"
 
 export const getAllOrders = async () => {
-  const response = await fetch(`${apiUrl}api/orders`)
+  const response = await fetch(`${apiUrl}api/orders`, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+  })
   return response.json()
 }
 
 export const getSingleOrder = async (id) => {
-  const response = await fetch(`${apiUrl}api/orders/${id}`)
+  const response = await fetch(`${apiUrl}api/orders/${id}`, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+  })
   return response.json()
 }
 
 export const deleteOrder = async (id) => {
   const response = await fetch(`${apiUrl}api/orders/${id}`, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
     method: "DELETE",
   })
   return response.json()
@@ -22,6 +33,7 @@ export const createOrder = async (order) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
     body: JSON.stringify(order),
   })
@@ -33,6 +45,7 @@ export const updateOrder = async (order) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
     body: JSON.stringify(order),
   })

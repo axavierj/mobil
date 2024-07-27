@@ -21,7 +21,8 @@ class Auth extends HTMLElement {
       formObject[key] = value
     })
     const loginResponse = await login(formObject)
-    console.log(loginResponse)
+    sessionStorage.setItem("token", loginResponse.token)
+    window.location.href = "/index.html"
   }
 }
 

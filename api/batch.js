@@ -1,7 +1,11 @@
 import { apiUrl } from "../utils/apiUrl.js"
 
 export const gatAllBatches = async () => {
-  const response = await fetch(`${apiUrl}api/batches`)
+  const response = await fetch(`${apiUrl}api/batches`, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+  })
   return await response.json()
 }
 
@@ -12,6 +16,9 @@ export const getSingleBatch = async (id) => {
 
 export const deleteBatch = async (id) => {
   const response = await fetch(`${apiUrl}api/batches/${id}`, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
     method: "DELETE",
   })
   return await response.json()
@@ -22,6 +29,7 @@ export const createBatch = async (batch) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
     body: JSON.stringify(batch),
   })
@@ -33,6 +41,7 @@ export const updateBatch = async (batch) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
     body: JSON.stringify(batch),
   })
@@ -40,7 +49,11 @@ export const updateBatch = async (batch) => {
 }
 
 export const getActiveBatch = async () => {
-  const response = await fetch(`${apiUrl}api/batch/active`)
+  const response = await fetch(`${apiUrl}api/batch/active`, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+  })
 
   return await response.json()
 }
@@ -51,6 +64,7 @@ export const deactivateBatch = async (batch) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
     },
     body: JSON.stringify(batch),
   })
