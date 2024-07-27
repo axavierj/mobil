@@ -1,0 +1,25 @@
+{
+  "name": "mobil",
+  "version": "1.0.0",
+  "description": "a progresive web app",
+  "main": "service-worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axavierj/mobil.git"
+  },
+  "keywords": [
+    "little",
+    "ribon",
+    "cakes",
+    "catering"
+  ],
+  "author": "alexander jimenez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axavierj/mobil/issues"
+  },
+  "homepage": "https://github.com/axavierj/mobil#readme"
+}
